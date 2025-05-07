@@ -1,0 +1,53 @@
+{
+    "name": "aboutPageTest",
+    "start": 1745221608219,
+    "stop": 1745221631159,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "be5e91f8-ac41-46ed-bb15-2122c4019c5a",
+    "historyId": "d1fcb6804f9f5c52b72e92daf4b5f9bb",
+    "fullName": "ru.iteco.fmhandroid.ui.AboutPageTest.aboutPageTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.AboutPageTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "aboutPageTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.AboutPageTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(903)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

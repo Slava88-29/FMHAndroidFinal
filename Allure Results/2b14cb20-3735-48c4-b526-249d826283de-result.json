@@ -1,0 +1,65 @@
+{
+    "name": "authValidTest",
+    "start": 1745220358145,
+    "stop": 1745220369269,
+    "stage": "finished",
+    "description": "Проверка входа с валидными учетными данными",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "2b14cb20-3735-48c4-b526-249d826283de",
+    "historyId": "ad7fc757c9edfcef585ea1f9bd26bfc9",
+    "fullName": "ru.iteco.fmhandroid.ui.AuthTest.authValidTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.AuthTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "authValidTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.AuthTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(893)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Успешная авторизация"
+        },
+        {
+            "name": "feature",
+            "value": "Функционал входа в приложение"
+        },
+        {
+            "name": "epic",
+            "value": "Авторизация"
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "name": "authNoValidPasswordTest",
+    "start": 1745220343943,
+    "stop": 1745220357826,
+    "stage": "finished",
+    "description": "Проверка входа с невалидным паролем",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "ce79fa48-85b3-4ed0-95a3-a9ae318aeb07",
+    "historyId": "3aa61476e7882e4f3732ae4fd8d934e6",
+    "fullName": "ru.iteco.fmhandroid.ui.AuthTest.authNoValidPasswordTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.AuthTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "authNoValidPasswordTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.AuthTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(893)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Неуспешная авторизация"
+        },
+        {
+            "name": "feature",
+            "value": "Функционал входа в приложение"
+        },
+        {
+            "name": "epic",
+            "value": "Авторизация"
+        }
+    ]
+}
