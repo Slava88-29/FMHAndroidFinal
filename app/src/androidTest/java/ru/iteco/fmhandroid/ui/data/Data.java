@@ -1,6 +1,8 @@
 package ru.iteco.fmhandroid.ui.data;
 
-public class Data {
+public final class Data {
+
+    private Data() {}
     // Auth constants
     public static final String VALID_LOGIN = "login2";
     public static final String VALID_PASSWORD = "password2";

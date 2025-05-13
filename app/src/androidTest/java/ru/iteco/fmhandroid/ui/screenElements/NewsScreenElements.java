@@ -1,71 +1,126 @@
 package ru.iteco.fmhandroid.ui.screenElements;
 
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-
 import ru.iteco.fmhandroid.R;
 
 public class NewsScreenElements {
-    public static int getEditNewsButton() {
-        return R.id.edit_news_material_button;
+    private int editNewsButton = R.id.edit_news_material_button;
+    private int addNewsButton = R.id.add_news_image_view;
+    private int deleteNewsButton = R.id.delete_news_item_image_view;
+    private int editNewsItemButton = R.id.edit_news_item_image_view;
+    private int categoryField = R.id.news_item_category_text_input_layout;
+    private int titleField = R.id.news_item_title_text_input_edit_text;
+    private int createDateField = R.id.news_item_create_date_text_input_layout;
+    private int publishTimeField = R.id.news_item_publish_time_text_input_layout;
+    private int descriptionField = R.id.news_item_description_text_input_edit_text;
+    private int saveButton = R.id.save_button;
+    private int confirmButton = android.R.id.button1;
+
+    public int getEditNewsButton() {
+        return editNewsButton;
     }
 
-    public static int getAddNewsButton() {
-        return R.id.add_news_image_view;
+    public void setEditNewsButton(int editNewsButton) {
+        this.editNewsButton = editNewsButton;
     }
 
-    public static int getDeleteNewsButton() {
-        return R.id.delete_news_item_image_view;
+    public int getAddNewsButton() {
+        return addNewsButton;
     }
 
-    public static int getEditNewsItemButton() {
-        return R.id.edit_news_item_image_view;
+    public void setAddNewsButton(int addNewsButton) {
+        this.addNewsButton = addNewsButton;
     }
 
-    public static int getCategoryField() {
-        return R.id.news_item_category_text_input_layout;
+    public int getDeleteNewsButton() {
+        return deleteNewsButton;
     }
 
-    public static int getTitleField() {
-        return R.id.news_item_title_text_input_edit_text;
+    public void setDeleteNewsButton(int deleteNewsButton) {
+        this.deleteNewsButton = deleteNewsButton;
     }
 
-    public static int getCreateDateField() {
-        return R.id.news_item_create_date_text_input_layout;
+    public int getEditNewsItemButton() {
+        return editNewsItemButton;
     }
 
-    public static int getPublishTimeField() {
-        return R.id.news_item_publish_time_text_input_layout;
+    public void setEditNewsItemButton(int editNewsItemButton) {
+        this.editNewsItemButton = editNewsItemButton;
     }
 
-    public static int getDescriptionField() {
-        return R.id.news_item_description_text_input_edit_text;
+    public int getCategoryField() {
+        return categoryField;
     }
 
-    public static int getSaveButton() {
-        return R.id.save_button;
+    public void setCategoryField(int categoryField) {
+        this.categoryField = categoryField;
     }
 
-    public static int getConfirmButton() {
-        return android.R.id.button1;
+    public int getTitleField() {
+        return titleField;
     }
 
-    public static int getNewsItemCategoryTextInputLayout() {
-        return R.id.news_item_category_text_input_layout;
+    public void setTitleField(int titleField) {
+        this.titleField = titleField;
     }
 
-    public static int getNewsItemTitleTextInputEditText() {
-        return R.id.news_item_title_text_input_edit_text;
+    public int getCreateDateField() {
+        return createDateField;
     }
 
-    public static int getNewsItemCreateDateTextInputLayout() {
-        return R.id.news_item_create_date_text_input_layout;
+    public void setCreateDateField(int createDateField) {
+        this.createDateField = createDateField;
     }
 
-    public static int getNewsItemPublishTimeTextInputLayout() {
-        return R.id.news_item_publish_time_text_input_layout;
+    public int getPublishTimeField() {
+        return publishTimeField;
     }
 
-    public static int getNewsItemDescriptionTextInputEditText() {
-        return R.id.news_item_description_text_input_edit_text;
+    public void setPublishTimeField(int publishTimeField) {
+        this.publishTimeField = publishTimeField;
+    }
+
+    public int getDescriptionField() {
+        return descriptionField;
+    }
+
+    public void setDescriptionField(int descriptionField) {
+        this.descriptionField = descriptionField;
+    }
+
+    public int getSaveButton() {
+        return saveButton;
+    }
+
+    public void setSaveButton(int saveButton) {
+        this.saveButton = saveButton;
+    }
+
+    public int getConfirmButton() {
+        return confirmButton;
+    }
+
+    public void setConfirmButton(int confirmButton) {
+        this.confirmButton = confirmButton;
+    }
+
+    // Дублирующие методы (если нужно оставить для совместимости)
+    public int getNewsItemCategoryTextInputLayout() {
+        return categoryField;
+    }
+
+    public int getNewsItemTitleTextInputEditText() {
+        return titleField;
+    }
+
+    public int getNewsItemCreateDateTextInputLayout() {
+        return createDateField;
+    }
+
+    public int getNewsItemPublishTimeTextInputLayout() {
+        return publishTimeField;
+    }
+
+    public int getNewsItemDescriptionTextInputEditText() {
+        return descriptionField;
     }
 }

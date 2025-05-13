@@ -13,10 +13,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-
 import static ru.iteco.fmhandroid.ui.data.DataHelper.waitDisplayed;
-import static ru.iteco.fmhandroid.ui.screenElements.AuthScreenElements.getAuthTitle;
-import static ru.iteco.fmhandroid.ui.screenElements.MainScreenElements.getTrademarkImage;
 
 import android.os.SystemClock;
 import android.view.View;
@@ -24,44 +21,46 @@ import android.view.View;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import io.qameta.allure.kotlin.Step;
-import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.data.Data;
 import ru.iteco.fmhandroid.ui.screenElements.AuthScreenElements;
+import ru.iteco.fmhandroid.ui.screenElements.MainScreenElements;
 
 public class AuthSteps {
+    private AuthScreenElements authScreenElements = new AuthScreenElements();
+    private MainScreenElements mainScreenElements = new MainScreenElements();
     @Step("Проверка видимости экрана авторизации")
     public void checkAuthScreenVisible() {
-        onView(isRoot()).perform(waitDisplayed(getAuthTitle(), Data.LOAD_TIMEOUT));
+        onView(isRoot()).perform(waitDisplayed(authScreenElements.getAuthTitle(), Data.LOAD_TIMEOUT));
 
-        onView(allOf(withId(getAuthTitle()), withText(Data.AUTH_SCREEN_TITLE)))
+        onView(allOf(withId(authScreenElements.getAuthTitle()), withText(Data.AUTH_SCREEN_TITLE)))
                 .check(matches(isDisplayed()));
 
     }
 
     @Step("Ввод логина: {login}")
     public void enterLogin(String login) {
-        onView(withId(AuthScreenElements.getLoginField()))
+        onView(withId(authScreenElements.getLoginField()))
                 .perform(replaceText(login));
     }
 
     @Step("Ввод пароля: {password}")
     public void enterPassword(String password) {
-        onView(withId(AuthScreenElements.getPasswordField()))
+        onView(withId(authScreenElements.getPasswordField()))
                 .perform(replaceText(password), closeSoftKeyboard());
     }
 
     @Step("Нажатие кнопки SIGN IN")
     public void clickSignInButton() {
-        onView(withId(AuthScreenElements.getSignInButton()))
+        onView(withId(authScreenElements.getSignInButton()))
                 .perform(click());
         SystemClock.sleep(Data.ACTION_DELAY);
-        onView(isRoot()).perform(waitDisplayed(getTrademarkImage(), Data.LOAD_TIMEOUT));
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), Data.LOAD_TIMEOUT));
     }
 
     @Step("Выход из системы")
     public void logout() {
-        onView(withId(AuthScreenElements.getAuthImageButton()))
+        onView(withId(authScreenElements.getAuthImageButton()))
                 .perform(click());
         onView(allOf(withId(android.R.id.title), withText(Data.LOGOUT_BUTTON_TEXT)))
                 .perform(click());

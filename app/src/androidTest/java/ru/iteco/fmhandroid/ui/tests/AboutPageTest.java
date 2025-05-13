@@ -32,6 +32,7 @@ public class AboutPageTest {
     private AuthSteps authSteps = new AuthSteps();
     private MainSteps mainSteps = new MainSteps();
     private AboutSteps aboutSteps = new AboutSteps();
+    private AboutScreenElements aboutScreenElements = new AboutScreenElements();
 
     @Test
     public void aboutPageTest() {
@@ -44,9 +45,9 @@ public class AboutPageTest {
         mainSteps.selectMenuItem(MENU_ITEM_ABOUT);
 
         SystemClock.sleep(Data.LOAD_TIMEOUT);
-        aboutSteps.checkTextDisplayed(AboutScreenElements.getVersionTitle(), ABOUT_VERSION_TITLE);
-        aboutSteps.checkTextDisplayed(AboutScreenElements.getPrivacyPolicyLabel(), ABOUT_PRIVACY_POLICY);
-        aboutSteps.checkTextDisplayed(AboutScreenElements.getTermsOfUseLabel(), ABOUT_TERMS_OF_USE);
+        aboutSteps.checkTextDisplayed(aboutScreenElements.getVersionTitle(), ABOUT_VERSION_TITLE);
+        aboutSteps.checkTextDisplayed(aboutScreenElements.getPrivacyPolicyLabel(), ABOUT_PRIVACY_POLICY);
+        aboutSteps.checkTextDisplayed(aboutScreenElements.getTermsOfUseLabel(), ABOUT_TERMS_OF_USE);
 
         aboutSteps.goBackFromAbout();
         authSteps.logout();

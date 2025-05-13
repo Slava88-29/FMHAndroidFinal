@@ -11,7 +11,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 import static ru.iteco.fmhandroid.ui.data.DataHelper.waitDisplayed;
-import static ru.iteco.fmhandroid.ui.screenElements.MainScreenElements.getTrademarkImage;
 
 import android.os.SystemClock;
 
@@ -20,17 +19,19 @@ import ru.iteco.fmhandroid.ui.data.Data;
 import ru.iteco.fmhandroid.ui.screenElements.MainScreenElements;
 
 public class MainSteps {
+
+    private MainScreenElements mainScreenElements = new MainScreenElements();
     @Step("Проверка успешной авторизации")
     public void verifySuccessfulAuth() {
-        onView(withId(MainScreenElements.getTrademarkImage()))
+        onView(withId(mainScreenElements.getTrademarkImage()))
                 .check(matches(isDisplayed()));
-        onView(isRoot()).perform(waitDisplayed(getTrademarkImage(), Data.LOAD_TIMEOUT));
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), Data.LOAD_TIMEOUT));
     }
 
     @Step("Нажатие на бургер-меню")
     public void openMainMenu() {
         SystemClock.sleep(Data.LOAD_TIMEOUT);
-        onView(withId(MainScreenElements.getMainMenuButton()))
+        onView(withId(mainScreenElements.getMainMenuButton()))
                 .perform(click());
     }
 

@@ -17,7 +17,8 @@ import org.hamcrest.TypeSafeMatcher;
 
 import java.util.concurrent.TimeoutException;
 
-public class DataHelper {
+public final class DataHelper {
+    private DataHelper() {}
     public static Matcher<View> withIndex(final Matcher<View> matcher, final int index) {
         return new TypeSafeMatcher<View>() {
             int currentIndex = 0;
