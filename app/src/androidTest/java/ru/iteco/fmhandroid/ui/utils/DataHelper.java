@@ -1,8 +1,8 @@
-package ru.iteco.fmhandroid.ui.data;
+package ru.iteco.fmhandroid.ui.utils;
 
-public final class Data {
+public final class DataHelper {
 
-    private Data() {}
+    private DataHelper() {}
     // Auth constants
     public static final String VALID_LOGIN = "login2";
     public static final String VALID_PASSWORD = "password2";

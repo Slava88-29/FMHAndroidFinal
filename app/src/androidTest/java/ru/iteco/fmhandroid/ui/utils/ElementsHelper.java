@@ -1,4 +1,4 @@
-package ru.iteco.fmhandroid.ui.data;
+package ru.iteco.fmhandroid.ui.utils;
 
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
@@ -17,8 +17,11 @@ import org.hamcrest.TypeSafeMatcher;
 
 import java.util.concurrent.TimeoutException;
 
-public final class DataHelper {
-    private DataHelper() {}
+import ru.iteco.fmhandroid.ui.steps.AuthSteps;
+import ru.iteco.fmhandroid.ui.steps.MainSteps;
+
+public final class ElementsHelper {
+    private ElementsHelper() {}
     public static Matcher<View> withIndex(final Matcher<View> matcher, final int index) {
         return new TypeSafeMatcher<View>() {
             int currentIndex = 0;

@@ -11,14 +11,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static ru.iteco.fmhandroid.ui.data.Data.ACTION_DELAY;
+import static ru.iteco.fmhandroid.ui.utils.DataHelper.ACTION_DELAY;
 
 import android.os.SystemClock;
 
 import androidx.test.espresso.ViewInteraction;
 
 import io.qameta.allure.kotlin.Step;
-import ru.iteco.fmhandroid.ui.data.DataHelper;
+import ru.iteco.fmhandroid.ui.utils.ElementsHelper;
 import ru.iteco.fmhandroid.ui.screenElements.NewsScreenElements;
 
 public class NewsSteps {
@@ -38,7 +38,7 @@ public class NewsSteps {
         onView(withId(newsScreenElements.getEditNewsButton()))
                 .perform(click());
         SystemClock.sleep(ACTION_DELAY);
-        onView(DataHelper.withIndex(withId(newsScreenElements.getDeleteNewsButton()), 0))
+        onView(ElementsHelper.withIndex(withId(newsScreenElements.getDeleteNewsButton()), 0))
                 .perform(click());
         onView(withId(newsScreenElements.getConfirmButton()))
                 .perform(click());
@@ -48,7 +48,7 @@ public class NewsSteps {
     public void editNews() {
         onView(withId(newsScreenElements.getEditNewsButton()))
                 .perform(click());
-        onView(DataHelper.withIndex(withId(newsScreenElements.getEditNewsItemButton()), 0))
+        onView(ElementsHelper.withIndex(withId(newsScreenElements.getEditNewsItemButton()), 0))
                 .perform(click());
         SystemClock.sleep(ACTION_DELAY);
     }

@@ -10,27 +10,42 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import static org.hamcrest.Matchers.allOf;
 
-import static ru.iteco.fmhandroid.ui.data.DataHelper.waitDisplayed;
+import static ru.iteco.fmhandroid.ui.utils.ElementsHelper.waitDisplayed;
 
 import android.os.SystemClock;
 
 import io.qameta.allure.kotlin.Step;
-import ru.iteco.fmhandroid.ui.data.Data;
+import ru.iteco.fmhandroid.ui.utils.DataHelper;
 import ru.iteco.fmhandroid.ui.screenElements.MainScreenElements;
+import ru.iteco.fmhandroid.ui.screenElements.OurMissionElements;
 
 public class MainSteps {
 
     private MainScreenElements mainScreenElements = new MainScreenElements();
+    private OurMissionElements ourMissionElements = new OurMissionElements();
+
+    public void clickOurMissionButton(){
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), DataHelper.LOAD_TIMEOUT));
+        onView(withId(ourMissionElements.getOurMissionButton()))
+                .perform(click());
+
+    }
+    @Step("Проверка надписи News на главной странице")
+    public void verifyNewsHeaderVisible() {
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getMainMenuButton(), 10000));
+        mainScreenElements.getNewsLogoView().check(matches(isDisplayed()));
+    }
     @Step("Проверка успешной авторизации")
     public void verifySuccessfulAuth() {
         onView(withId(mainScreenElements.getTrademarkImage()))
                 .check(matches(isDisplayed()));
-        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), Data.LOAD_TIMEOUT));
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), DataHelper.LOAD_TIMEOUT));
     }
 
     @Step("Нажатие на бургер-меню")
     public void openMainMenu() {
-        SystemClock.sleep(Data.LOAD_TIMEOUT);
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getMainMenuButton(), 10000));
+        SystemClock.sleep(DataHelper.LOAD_TIMEOUT);
         onView(withId(mainScreenElements.getMainMenuButton()))
                 .perform(click());
     }

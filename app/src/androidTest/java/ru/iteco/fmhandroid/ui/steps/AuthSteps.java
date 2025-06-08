@@ -13,7 +13,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import static ru.iteco.fmhandroid.ui.data.DataHelper.waitDisplayed;
+import static ru.iteco.fmhandroid.ui.utils.ElementsHelper.waitDisplayed;
 
 import android.os.SystemClock;
 import android.view.View;
@@ -22,7 +22,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import io.qameta.allure.kotlin.Step;
 import ru.iteco.fmhandroid.ui.AppActivity;
-import ru.iteco.fmhandroid.ui.data.Data;
+import ru.iteco.fmhandroid.ui.utils.DataHelper;
 import ru.iteco.fmhandroid.ui.screenElements.AuthScreenElements;
 import ru.iteco.fmhandroid.ui.screenElements.MainScreenElements;
 
@@ -31,9 +31,9 @@ public class AuthSteps {
     private MainScreenElements mainScreenElements = new MainScreenElements();
     @Step("Проверка видимости экрана авторизации")
     public void checkAuthScreenVisible() {
-        onView(isRoot()).perform(waitDisplayed(authScreenElements.getAuthTitle(), Data.LOAD_TIMEOUT));
+        onView(isRoot()).perform(waitDisplayed(authScreenElements.getAuthTitle(), DataHelper.LOAD_TIMEOUT));
 
-        onView(allOf(withId(authScreenElements.getAuthTitle()), withText(Data.AUTH_SCREEN_TITLE)))
+        onView(allOf(withId(authScreenElements.getAuthTitle()), withText(DataHelper.AUTH_SCREEN_TITLE)))
                 .check(matches(isDisplayed()));
 
     }
@@ -52,17 +52,18 @@ public class AuthSteps {
 
     @Step("Нажатие кнопки SIGN IN")
     public void clickSignInButton() {
+        onView(isRoot()).perform(waitDisplayed(authScreenElements.getSignInButton(), DataHelper.LOAD_TIMEOUT));
         onView(withId(authScreenElements.getSignInButton()))
                 .perform(click());
-        SystemClock.sleep(Data.ACTION_DELAY);
-        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), Data.LOAD_TIMEOUT));
+        SystemClock.sleep(DataHelper.ACTION_DELAY);
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), DataHelper.LOAD_TIMEOUT));
     }
 
     @Step("Выход из системы")
     public void logout() {
         onView(withId(authScreenElements.getAuthImageButton()))
                 .perform(click());
-        onView(allOf(withId(android.R.id.title), withText(Data.LOGOUT_BUTTON_TEXT)))
+        onView(allOf(withId(android.R.id.title), withText(DataHelper.LOGOUT_BUTTON_TEXT)))
                 .perform(click());
     }
     @Step("Проверка сообщения об ошибке")
@@ -74,5 +75,9 @@ public class AuthSteps {
         onView(withText(message))
                 .inRoot(withDecorView(not(is(decorView[0]))))
                 .check(matches(isDisplayed()));
+    }
+    @Step("Проверка наличия текста авторизации")
+    public void verifyAuthScreenElements() {
+        onView(isRoot()).perform(waitDisplayed(authScreenElements.getAuthTitle(), 10000));
     }
 }
