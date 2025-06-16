@@ -10,9 +10,13 @@ public class AboutScreenElements {
     private int privacyPolicyLabel = R.id.about_privacy_policy_label_text_view;
     private int termsOfUseLabel = R.id.about_terms_of_use_label_text_view;
     private int backButton = R.id.about_back_image_button;
-
+    private final String urlPrivacyPolicy = "https://vhospice.org/#/privacy-policy/";
     public int getTrademarkImage() {
         return trademarkImage;
+    }
+
+    public String getUrlPrivacyPolicy() {
+        return urlPrivacyPolicy;
     }
 
     public void setTrademarkImage(int trademarkImage) {

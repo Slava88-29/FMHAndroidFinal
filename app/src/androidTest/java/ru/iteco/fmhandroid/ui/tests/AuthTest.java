@@ -19,7 +19,7 @@ public class AuthTest extends BaseTest {
     }
 
     @Test
-    @Story("Успешная авторизация и выход из профиля")
+    @Story("Успешная авторизация")
     @Description("Проверка входа с валидными учетными данными")
     public void authValidTestAndLogOut() {
         authSteps.checkAuthScreenVisible();
@@ -28,6 +28,19 @@ public class AuthTest extends BaseTest {
         authSteps.clickSignInButton();
         mainSteps.verifySuccessfulAuth();
         authSteps.logout();
+    }
+
+    @Test
+    @Story("Успешная авторизация")
+    @Description("Проверка выхода из профиля")
+    public void logOutTest() {
+        authSteps.checkAuthScreenVisible();
+        authSteps.enterLogin(DataHelper.VALID_LOGIN);
+        authSteps.enterPassword(DataHelper.VALID_PASSWORD);
+        authSteps.clickSignInButton();
+        mainSteps.verifySuccessfulAuth();
+        authSteps.logout();
+        authSteps.checkAuthScreenVisible();
     }
 
     @Test

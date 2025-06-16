@@ -22,9 +22,9 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import io.qameta.allure.kotlin.Step;
 import ru.iteco.fmhandroid.ui.AppActivity;
-import ru.iteco.fmhandroid.ui.utils.DataHelper;
 import ru.iteco.fmhandroid.ui.screenElements.AuthScreenElements;
 import ru.iteco.fmhandroid.ui.screenElements.MainScreenElements;
+import ru.iteco.fmhandroid.ui.utils.DataHelper;
 
 public class AuthSteps {
     private AuthScreenElements authScreenElements = new AuthScreenElements();
