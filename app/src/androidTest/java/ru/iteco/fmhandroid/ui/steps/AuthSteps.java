@@ -15,7 +15,6 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static ru.iteco.fmhandroid.ui.utils.ElementsHelper.waitDisplayed;
 
-import android.os.SystemClock;
 import android.view.View;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
@@ -55,7 +54,6 @@ public class AuthSteps {
         onView(isRoot()).perform(waitDisplayed(authScreenElements.getSignInButton(), DataHelper.LOAD_TIMEOUT));
         onView(withId(authScreenElements.getSignInButton()))
                 .perform(click());
-        SystemClock.sleep(DataHelper.ACTION_DELAY);
         onView(isRoot()).perform(waitDisplayed(mainScreenElements.getTrademarkImage(), DataHelper.LOAD_TIMEOUT));
     }
 

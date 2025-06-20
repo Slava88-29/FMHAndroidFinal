@@ -10,9 +10,6 @@ import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.screenElements.AboutScreenElements;
 import ru.iteco.fmhandroid.ui.steps.AboutSteps;
-import ru.iteco.fmhandroid.ui.steps.AuthSteps;
-import ru.iteco.fmhandroid.ui.steps.MainSteps;
-import ru.iteco.fmhandroid.ui.steps.NewsSteps;
 import ru.iteco.fmhandroid.ui.steps.OurMissionSteps;
 import ru.iteco.fmhandroid.ui.utils.DataHelper;
 

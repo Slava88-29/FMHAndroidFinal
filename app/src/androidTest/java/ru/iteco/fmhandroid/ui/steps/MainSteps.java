@@ -44,8 +44,7 @@ public class MainSteps {
 
     @Step("Нажатие на бургер-меню")
     public void openMainMenu() {
-        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getMainMenuButton(), 10000));
-        SystemClock.sleep(DataHelper.LOAD_TIMEOUT);
+        onView(isRoot()).perform(waitDisplayed(mainScreenElements.getMainMenuButton(), DataHelper.LOAD_TIMEOUT));
         onView(withId(mainScreenElements.getMainMenuButton()))
                 .perform(click());
     }

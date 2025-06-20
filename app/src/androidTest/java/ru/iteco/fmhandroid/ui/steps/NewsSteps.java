@@ -88,7 +88,8 @@ public class NewsSteps {
                 .perform(click());
         onView(allOf(withText("OK"), isDescendantOfA(withId(android.R.id.content))))
                 .perform(click());
-        SystemClock.sleep(ACTION_DELAY);
+
+        onView(isRoot()).perform(waitDisplayed(newsScreenElements.getDescriptionField(), DataHelper.LOAD_TIMEOUT));
 
         onView(withId(newsScreenElements.getDescriptionField()))
                 .perform(click(), replaceText(description), closeSoftKeyboard());
@@ -116,7 +117,7 @@ public class NewsSteps {
 
         onView(withId(newsScreenElements.getNewsItemPublishTimeTextInputLayout())).perform(click());
         onView(allOf(withText("OK"), isDescendantOfA(withId(android.R.id.content)))).perform(click());
-        SystemClock.sleep(ACTION_DELAY);
+        onView(isRoot()).perform(waitDisplayed(newsScreenElements.getNewsItemDescriptionTextInputEditText(), DataHelper.LOAD_TIMEOUT));
 
         onView(withId(newsScreenElements.getNewsItemDescriptionTextInputEditText()))
                 .perform(click(), replaceText(description), closeSoftKeyboard());
